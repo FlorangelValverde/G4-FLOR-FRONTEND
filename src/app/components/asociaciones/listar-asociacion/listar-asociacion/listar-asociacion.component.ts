@@ -26,12 +26,12 @@ export class ListarAsociacionComponent implements OnInit {
    
         Swal.fire({
           title: 'Estas seguro?',
-          text: "No podras reverti esto!",
+          text: "No podras revertir esto!",
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
+          confirmButtonText: 'Si, borralo!'
         }).then((result) => {
           if (result.isConfirmed) {
             this.listar()

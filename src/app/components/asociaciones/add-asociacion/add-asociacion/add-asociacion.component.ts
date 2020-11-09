@@ -22,7 +22,7 @@ export class AddAsociacionComponent implements OnInit {
       this.tipo.post(this.tipoModel).subscribe(        
         response=>{
           this.router.navigate(['/lista']);
-          swal.fire('Nuevo Nombre', `Rol ${this.tipoModel.nombre} creado con exito`,"success") 
+          swal.fire('Nuevo Tipo de Asociacion', `Rol ${this.tipoModel.nombre} creado con exito`,"success") 
       })
 }
 }

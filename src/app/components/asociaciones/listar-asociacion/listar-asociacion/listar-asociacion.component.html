@@ -1,0 +1,33 @@
+<div class="center">
+    <a mat-button routerLink="/tipo/add" class="add"><mat-icon>add</mat-icon>Registrar un alo</a>
+</div>
+<nav class="center">
+  <table mat-table [dataSource]="tipos" class="mat-elevation-z8" class="upeutablita">
+    <ng-container matColumnDef="IDTIPO_ASOCIACION">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element"> {{element.IDTIPO_ASOCIACION}} </td>
+    </ng-container>
+    <ng-container matColumnDef="NOMBRE">
+      <th mat-header-cell *matHeaderCellDef>NOMBRE</th>
+      <td mat-cell *matCellDef="let element"> {{element.NOMBRE}} </td>
+    </ng-container>
+    <ng-container matColumnDef="EDITAR">
+      <th mat-header-cell *matHeaderCellDef>Editar</th>
+      <td mat-cell *matCellDef="let element">
+        <a mat-icon-button [routerLink]="['/editar', element.IDTIPO_ASOCIACION]">
+          <mat-icon color="primary">edit</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="ELIMINAR">
+      <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+      <td mat-cell *matCellDef="let element">
+        <button (click)="delTipo(element.IDTIPO_ASOCIACION)" mat-icon-button>
+          <mat-icon color="warn">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['IDTIPO_ASOCIACION', 'NOMBRE', 'EDITAR','ELIMINAR']"></tr>
+    <tr mat-row *matRowDef="let fila; columns: ['IDTIPO_ASOCIACION', 'NOMBRE','EDITAR','ELIMINAR'];"></tr>
+  </table>
+</nav>

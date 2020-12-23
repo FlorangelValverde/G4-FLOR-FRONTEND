@@ -3,11 +3,7 @@ import { TipoAsociacionService } from 'src/app/service/tipo-asociacion.service';
 import { TipoAsociacion } from 'src/app/models/tipo-asociacion';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-
-
-
-
-
+import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
   selector: 'app-listar-asociacion',
@@ -15,54 +11,21 @@ import Swal from 'sweetalert2';
   styleUrls: ['./listar-asociacion.component.css']
 })
 export class ListarAsociacionComponent implements OnInit {
-  tipos : any;
-  constructor(private tipoAsociacionservice : TipoAsociacionService, private router : Router) { }
+  listausuarios : any;
+  constructor(private usuarioService : UsuarioService, private router : Router) { }
 
   ngOnInit(): void {
-    this.listar();
+    this.listarusuarioper();
   }
-  delTipo(num:number):void{
-    console.log("alo soy eliminar")
-   
-        Swal.fire({
-          title: 'Estas seguro?',
-          text: "No podras revertir esto!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Si, borralo!'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            this.listar()
-            Swal.fire(
-              'Eliminado!',
-              'El registro ha sido eliminado.',
-              'success'
-            )
-          }
-          this.tipoAsociacionservice.delete(num).subscribe(
-            response=>{
-              console.log(response);
-        })
-      }
-    )    
-  }
-
-
-
-
-
-  listar():void{
-    this.tipoAsociacionservice.get().subscribe(
-      (data)=>{
-        this.tipos = data['CUR_TIPO_ASOCIACION'];
-        console.log(data['CUR_TIPO_ASOCIACION']);
+  
+  listarusuarioper(){
+    this.usuarioService.getLista().subscribe(
+      (datos)=>{ console.log(datos)
+        this.listausuarios= datos[0]['CUR_USUARIO_PERSONA']
+        console.log(datos[0]['CUR_USUARIO_PERSONA'])
       }
     )
-
   }
-
 
 
 

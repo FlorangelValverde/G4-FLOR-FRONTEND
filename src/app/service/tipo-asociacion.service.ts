@@ -8,11 +8,12 @@ import { Observable, Subscription, of } from 'rxjs';
 })
 export class TipoAsociacionService {
   private httpHeaders = new HttpHeaders ({'Content-Type': 'application/json'});
-  private url : string = 'http://localhost:1313/tipoasociaciones';
+  private url : string = 'http://localhost:1313/usuarios';
   constructor(private http : HttpClient) { }
   get(): Observable<TipoAsociacion[]>{
       return this.http.get<TipoAsociacion[]>(this.url + '/all');
   }
+  
   post(Tipoasociacion : TipoAsociacion){
     return this.http.post(this.url + '/add' , Tipoasociacion, {headers: this.httpHeaders});
   }

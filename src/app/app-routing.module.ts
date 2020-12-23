@@ -1,20 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListarAsociacionComponent } from './components/asociaciones/listar-asociacion/listar-asociacion/listar-asociacion.component';
-import { AddAsociacionComponent } from "./components/asociaciones/add-asociacion/add-asociacion/add-asociacion.component";
-import { UpdateAsociacionComponent } from "../app/components/asociaciones/upd-asociacion/update-asociacion/update-asociacion.component";
-const routes: Routes = [
-  {
-     path: 'lista', component: ListarAsociacionComponent,
-     
-  },
-  {
-    path: 'tipo/add', component : AddAsociacionComponent
-  },
-  {
-    path : 'editar/:id', component: UpdateAsociacionComponent
-  }
+import { UsuarioComponent } from './components/usuario/usuario.component';
 
+const routes: Routes = [
+  { path: 'usuario', component: UsuarioComponent },
+  {path: '' , component: ListarAsociacionComponent}
 ];
 
 @NgModule({

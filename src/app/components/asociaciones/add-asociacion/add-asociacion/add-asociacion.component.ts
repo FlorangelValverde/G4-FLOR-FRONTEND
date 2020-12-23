@@ -19,10 +19,6 @@ export class AddAsociacionComponent implements OnInit {
   }
 
   public create():void{       
-      this.tipo.post(this.tipoModel).subscribe(        
-        response=>{
-          this.router.navigate(['/lista']);
-          swal.fire('Nuevo Tipo de Asociacion', `Rol ${this.tipoModel.nombre} creado con exito`,"success") 
-      })
+    
 }
 }

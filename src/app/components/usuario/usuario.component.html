@@ -1,0 +1,96 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div>
+                    <br>
+                    <h1 id="t">REGISTRO DE SOLICITANTES</h1><br>
+                </div>
+                <div class="t2">
+                    <h4>Solicitantes</h4>
+                    <h5 id="s">Todos los solicitantes de la base de datos</h5>
+                </div>
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <div class="card" style="width: 90rem; margin-left: 30px; height: 500px;">
+        <div class="card-body">
+            <h5 class="card-title">Nuevo Solicitante</h5>
+            <hr>
+            <br>
+            <form class="formulario">
+                <div class="derecho">
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">DNI</label>
+                        <div class="col-sm-10">
+                            <input type="text" style="width: 50%;" class="form-control form-control-sm" id="colFormLabelSm" placeholder="DNI" [(ngModel)]="usuarioModel.dni" name="DNI">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">NOMBRES</label>
+                        <div class="col-sm-10">
+                            <input type="text" style="width: 50%;" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Nombres completos" [(ngModel)]="usuarioModel.nombre" name=" NOMBRE">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">APELLIDO PATERNO</label>
+                        <div class="col-sm-10">
+                            <input type="email" style="width: 50%;" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Apellido Paterno" [(ngModel)]="usuarioModel.ape_pat" name="APE_PAT">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">APELLIDO MATERNO</label>
+                        <div class="col-sm-10">
+                            <input type="email" style="width: 50%;" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Apellido Materno" [(ngModel)]="usuarioModel.ape_mat" name="APE_MAT">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">FECHA DE NACIMIENTO</label>
+                        <div class="col-sm-10">
+                            <input type="date" style="width: 50%;" class="form-control form-control-sm" id="colFormLabelSm" [(ngModel)]="usuarioModel.f_nac" name="F_NAC">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="izquierdo">
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">CORREO</label>
+                        <div class="col-sm-10">
+                            <input type="email" style="width: 50%;" class="form-control form-control-sm" id="colFormLabelSm" placeholder="ejemplo@hotmail.com" [(ngModel)]="usuarioModel.correo" name="CORREO">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">DIRECCION</label>
+                        <div class="col-sm-10">
+                            <input type="email" style="width: 50%;" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Dirección" [(ngModel)]="usuarioModel.ubicacion" name="UBICACION">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">TELEFONO</label>
+                        <div class="col-sm-10">
+                            <input type="email" style="width: 50%;" class="form-control form-control-sm" id="colFormLabelSm" placeholder="000-000-000" [(ngModel)]="usuarioModel.telefono" name="TELEFONO">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">CONTRASEÑA</label>
+                        <div class="col-sm-10">
+                            <input type="password" style="width: 50%;" class="form-control form-control-sm" id="colFormLabelSm" [(ngModel)]="usuarioModel.password" name="PASSWORD">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <div class="botones" style="margin-top: 30px; margin-left: 930px;">
+                <button type="button" class="btn btn-primary" (click)='agregarusuario()'><i class="fa fa-floppy-o" aria-hidden="true"></i>
+                  Guardar</button>
+                <button type="button" class="btn btn-primary" style="background-color: gray; border-color: gray;"><i class="fa fa-times" aria-hidden="true"></i>
+                  Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <!-- /.content-header -->
+</div>
